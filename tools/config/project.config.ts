@@ -12,17 +12,17 @@ export class ProjectConfig extends SeedConfig {
   PROJECT_TASKS_DIR = join(process.cwd(), this.TOOLS_DIR, 'tasks', 'project');
   FONTS_DEST = `${this.APP_DEST}/fonts`;
   FONTS_SRC = [
-      'node_modules/bootstrap/dist/fonts/**'
+    'node_modules/bootstrap/dist/fonts/**'
   ];
   PRIME_NG_THEME = 'omega';
- CSS_IMAGE_DEST = `${this.CSS_DEST}/images`;
- CSS_IMAGE_SRC = [
-   'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/images/**'
- ];
- THEME_FONTS_DEST = `${this.APP_DEST}/css/fonts`;
-THEME_FONTS_SRC = [
+  CSS_IMAGE_DEST = `${this.CSS_DEST}/images`;
+  CSS_IMAGE_SRC = [
+    'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/images/**'
+  ];
+  THEME_FONTS_DEST = `${this.APP_DEST}/css/fonts`;
+  THEME_FONTS_SRC = [
     'node_modules/primeng/resources/themes/' + this.PRIME_NG_THEME + '/fonts/**',
-];
+  ];
   constructor() {
     super();
     // this.APP_TITLE = 'Put name of your app here';
@@ -34,9 +34,14 @@ THEME_FONTS_SRC = [
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
       ...this.NPM_DEPENDENCIES,
+      /** PrimeNG Dependencies */
       { src: 'primeng/resources/primeng.css', inject: true },
-{ src: 'primeng/resources/themes/omega/theme.css', inject: true },
-{ src: 'font-awesome/css/font-awesome.min.css', inject: true },
+      { src: 'primeng/resources/themes/omega/theme.css', inject: true },
+      { src: 'font-awesome/css/font-awesome.min.css', inject: true },
+      /** Angular2 Material Depencies */
+      { src: '@angular/material/prebuilt-themes/purple-green.css', inject: true },
+      /** Charts.js/ng2-charts Dependencies */
+      // { src: '@angular/material/prebuilt-themes/purple-green.css', inject: true }
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
@@ -56,7 +61,7 @@ THEME_FONTS_SRC = [
       ...this.ROLLUP_NAMED_EXPORTS,
       //{'node_modules/immutable/dist/immutable.js': [ 'Map' ]},
     ];
-    
+
 
     // Add packages (e.g. ng2-translate)
     // let additionalPackages: ExtendPackages[] = [{
@@ -65,7 +70,15 @@ THEME_FONTS_SRC = [
     //   path: 'node_modules/ng2-translate/bundles/ng2-translate.umd.js'
     // }];
     //
-    // this.addPackagesBundles(additionalPackages);
+    this.addPackageBundles({
+      name: '@angular/material',
+      path: 'node_modules/@angular/material/bundles/material.umd.js',
+      packageMeta: {
+        //@michelcve: I believe the next line should be removed, can someone confirm this?
+        //main: 'index.js',
+        defaultExtension: 'js'
+      }
+    });
 
     /* Add proxy middleware */
     // this.PROXY_MIDDLEWARE = [

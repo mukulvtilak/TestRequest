@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about.component';
 import { AboutRoutingModule } from './about-routing.module';
 import { CalendarModule } from 'primeng/primeng';
-import {BrowserModule} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { MdToolbarModule } from '@angular/material';
 @NgModule({
-  imports: [CommonModule, AboutRoutingModule,CalendarModule],
+  imports: [CommonModule, AboutRoutingModule, CalendarModule, MdToolbarModule],
   declarations: [AboutComponent],
   exports: [AboutComponent]
 })
