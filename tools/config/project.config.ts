@@ -39,7 +39,7 @@ export class ProjectConfig extends SeedConfig {
       { src: 'primeng/resources/themes/omega/theme.css', inject: true },
       { src: 'font-awesome/css/font-awesome.min.css', inject: true },
       /** Angular2 Material Depencies */
-      { src: '@angular/material/prebuilt-themes/purple-green.css', inject: true },
+      // { src: '@angular/material/prebuilt-themes/purple-green.css', inject: true },
       /** Charts.js/ng2-charts Dependencies */
       // { src: '@angular/material/prebuilt-themes/purple-green.css', inject: true }
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},

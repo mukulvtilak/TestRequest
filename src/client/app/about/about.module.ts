@@ -5,9 +5,9 @@ import { AboutRoutingModule } from './about-routing.module';
 import { CalendarModule } from 'primeng/primeng';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { MdToolbarModule } from '@angular/material';
+// import { MdToolbarModule } from '@angular/material';
 @NgModule({
-  imports: [CommonModule, AboutRoutingModule, CalendarModule, MdToolbarModule],
+  imports: [CommonModule, AboutRoutingModule, CalendarModule],
   declarations: [AboutComponent],
   exports: [AboutComponent]
 })
