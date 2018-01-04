@@ -4,11 +4,13 @@ import { AboutComponent } from './about.component';
 import { AboutRoutingModule } from './about-routing.module';
 import { CalendarModule } from 'primeng/primeng';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { AboutDummyService } from './about-dummy.service';
 
-// import { MdToolbarModule } from '@angular/material';
 @NgModule({
-  imports: [CommonModule, AboutRoutingModule, CalendarModule],
+  imports: [CommonModule, AboutRoutingModule, CalendarModule, FormsModule],
   declarations: [AboutComponent],
-  exports: [AboutComponent]
+  exports: [AboutComponent],
+  providers: [AboutDummyService]
 })
 export class AboutModule { }
