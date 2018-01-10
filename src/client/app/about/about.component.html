@@ -13,5 +13,6 @@
 <p-calendar [(ngModel)]="value"></p-calendar><br>
 Username : <input type="text" [(ngModel)]='registerUsr.UserName'><br>
 Password : <input type="text" [(ngModel)]='registerUsr.Password'><br>
-<p>{{registerUsr.UserName}}</p>
+<p>{{registerUsr.UserName}}</p><br>
+<p>{{value | date:'shortDate'}}</p>
 <button (click)="register()">Register</button>
