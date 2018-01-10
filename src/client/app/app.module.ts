@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DatePipe } from '@angular/common';
 // import { MaterialModule } from '@angular/material';
 
 /** Third Party Libraries */
