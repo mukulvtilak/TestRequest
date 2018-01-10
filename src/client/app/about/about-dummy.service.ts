@@ -1,22 +1,26 @@
+import { Injectable } from '@angular/core/';
+import { Http } from '@angular/http';
 import { Observable, Subject, ReplaySubject } from 'rxjs/Rx';
 
-import { BaseService } from '../shared/index';
-import { Http } from '@angular/http/src/http';
+import { BaseService } from '../shared/services/base.service';
+
 
 class UserCredsModel {
     UserName: string = '';
     Password: string = '';
 }
 
-const CONTEXT = '/createuser';
+const CONTEXT = 'createuser';
 
+@Injectable()
 export class AboutDummyService extends BaseService {
 
     constructor(public http: Http) {
         super(http, CONTEXT);
     }
-    registerUser(creds: UserCredsModel): Observable<any> {
-        return this.post$({UserName:creds.UserName, Password:creds.Password}, true)
-        .map(res => res.json());
+
+    registerUser(creds: UserCredsModel): Observable<any> {debugger;
+        return this.post$(creds, false)
+        .map(res => {console.log(res);res.json();});
     }
 }
