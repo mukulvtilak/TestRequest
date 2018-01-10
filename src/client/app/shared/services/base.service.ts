@@ -2,6 +2,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable, Subject, ReplaySubject } from 'rxjs/Rx';
 
 import { MessageService } from './message.service';
+import { Injectable } from '@angular/core/core';
 
 interface IHttpService {
     baseUrl: string;
@@ -13,6 +14,7 @@ interface IHttpService {
 }
 
 /** BaseService definition */
+@Injectable()
 export class BaseService implements IHttpService {
     public baseUrl: string = 'localhost:5050/';
     public options: RequestOptions;
@@ -23,6 +25,7 @@ export class BaseService implements IHttpService {
         this.httpService = _httpService;
         this.requestUrl = this.baseUrl.concat(_context);
     }
+
     /**
      * Get a object
      * @param id : ID of object
